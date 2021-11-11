@@ -11,8 +11,8 @@
         <module name="admin" />
         <module name="eurekaRegistryServer" />
         <module name="hr" />
-        <module name="gateway" />
         <module name="attendance" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
