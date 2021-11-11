@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f66b0686-670d-4002-86ee-1b8fde9d6950" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/client/AttnAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/application-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/api/AttnAdminApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/api/AttnAdminApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/client/AttnAdmin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/dto/AttnAdminDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/dto/AttnAdminDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/model/AttnAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/model/AttnAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/repo/AttnAdminRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/repo/AttnAdminRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/service/AttnAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/service/AttnAdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hr/src/main/java/com/ibcs/hr/repo/EmpRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/hr/src/main/java/com/ibcs/hr/repo/EmpRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tnl/src/main/java/com/ibcs/tnl/service/LeaveAppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tnl/src/main/java/com/ibcs/tnl/service/LeaveAppService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,26 +34,46 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/tnl/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/attendance/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/admin/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/hr/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/attendance/src/main/java/com/ibcs/attendance/repo/AttnAdminRepo.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
   </component>
   <component name="ProjectId" id="20lbTzjxLdmtrsjSoYEykMU66jo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager" selected="Spring Boot.AttendanceApplication">
@@ -104,7 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636622140554</updated>
-      <workItem from="1636622145388" duration="716000" />
+      <workItem from="1636622145388" duration="7367000" />
     </task>
     <servers />
   </component>
@@ -121,5 +152,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

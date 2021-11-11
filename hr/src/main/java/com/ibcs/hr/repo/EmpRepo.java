@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EmpRepo extends JpaRepository<Emp, Long> {
 
-    @Query("SELECT m FROM Emp m WHERE :sText is null or lower(m.code||m.name) LIKE '%lower(:sText)%' ORDER BY m.code")
+    @Query("SELECT m FROM Emp m WHERE :sText is null or lower ( m.code || m.name) LIKE '%lower(:sText)%' ORDER BY m.code")
     Page<Emp> findAllCustom(Pageable pageable, @Param("sText") String sText);
 
 }

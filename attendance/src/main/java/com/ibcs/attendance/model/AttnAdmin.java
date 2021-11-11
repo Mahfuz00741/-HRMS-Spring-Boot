@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+
 @Entity
 @Table(name = "ATTN_ADMIN")
 @Data
@@ -29,11 +30,11 @@ public class AttnAdmin extends BaseEntity{
     @Column(name = "ON_MOMENT", nullable=false)
     private LocalDateTime OnMoment;
 
-    @Column(name = "IN", nullable=false)
-    private LocalDateTime in;
+    @Column(name = "_IN", nullable=false)
+    private LocalDateTime _in;
 
-    @Column(name = "OUT", nullable=false)
-    private LocalDateTime out;
+    @Column(name = "_OUT", nullable=false)
+    private LocalDateTime _out;
 
     @Column(length=254)
     private String remark;
