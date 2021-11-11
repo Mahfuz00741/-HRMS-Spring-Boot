@@ -16,13 +16,24 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="admin" target="1.5" />
-      <module name="attendance" target="1.5" />
-      <module name="eurekaRegistryServer" target="1.5" />
-      <module name="gateway" target="1.5" />
-      <module name="hr" target="1.5" />
-      <module name="report" target="1.5" />
-      <module name="tnl" target="1.5" />
+      <module name="admin" target="11" />
+      <module name="attendance" target="11" />
+      <module name="eurekaRegistryServer" target="11" />
+      <module name="gateway" target="11" />
+      <module name="hr" target="11" />
+      <module name="report" target="11" />
+      <module name="tnl" target="11" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin" options="-parameters" />
+      <module name="attendance" options="-parameters" />
+      <module name="eurekaRegistryServer" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="hr" options="-parameters" />
+      <module name="report" options="-parameters" />
+      <module name="tnl" options="-parameters" />
+    </option>
   </component>
 </project>
