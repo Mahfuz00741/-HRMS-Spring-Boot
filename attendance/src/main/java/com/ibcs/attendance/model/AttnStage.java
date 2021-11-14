@@ -14,16 +14,16 @@ import javax.persistence.Table;
 @AllArgsConstructor
 public class AttnStage extends BaseEntity{
 
-    @Column()
-    private Long empCode;
+    @Column(nullable = false, length = 30)
+    private String empCode;
 
-    @Column()
+    @Column(nullable = false)
     private Long onMoment;
 
-    @Column()
-    private Long deviceId;
+    @Column(nullable = false)
+    private String deviceId;
 
-    @Column()
+    @Column(length = 200)
     private String remark;
 
 }
