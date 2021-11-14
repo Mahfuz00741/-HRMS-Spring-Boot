@@ -45,3 +45,9 @@
 2021-11-14 10:11:39,940 INFO  [restartedMain] com.ibcs.attendance.AttendanceApplication : Started AttendanceApplication in 11.518 seconds (JVM running for 14.687)
 2021-11-14 10:15:10,283 INFO  [http-nio-9095-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/attendance] : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-11-14 10:16:39,476 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 10:21:39,477 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 10:26:39,478 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 10:31:39,479 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 10:36:39,480 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 10:41:39,483 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 10:46:39,484 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
