@@ -6,8 +6,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
+
+@Entity
 @Data
 @Table(name = "ATTN_STAGE")
 @NoArgsConstructor
@@ -18,7 +22,7 @@ public class AttnStage extends BaseEntity{
     private String empCode;
 
     @Column(nullable = false)
-    private Long onMoment;
+    private LocalDateTime onMoment;
 
     @Column(nullable = false)
     private String deviceId;
