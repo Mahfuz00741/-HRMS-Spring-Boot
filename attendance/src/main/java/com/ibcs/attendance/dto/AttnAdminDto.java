@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AttnAdminDTO extends BaseDto {
+public class AttnAdminDto extends BaseDto {
 
     private LocalDate appDate;
 
@@ -24,5 +24,7 @@ public class AttnAdminDTO extends BaseDto {
     private LocalDateTime out;
 
     private String remark;
+
+    private String userMessage;
 
 }
