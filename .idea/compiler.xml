@@ -16,6 +16,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="admin" target="11" />
+      <module name="attendance" target="11" />
       <module name="eurekaRegistryServer" target="11" />
       <module name="gateway" target="11" />
       <module name="hr" target="11" />
@@ -26,6 +27,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="admin" options="-parameters" />
+      <module name="attendance" options="-parameters" />
       <module name="eurekaRegistryServer" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="hr" options="-parameters" />
