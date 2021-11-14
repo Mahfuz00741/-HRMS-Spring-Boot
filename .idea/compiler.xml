@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="report" />
-        <module name="eurekaRegistryServer" />
         <module name="admin" />
+        <module name="eurekaRegistryServer" />
         <module name="hr" />
         <module name="tnl" />
         <module name="gateway" />
