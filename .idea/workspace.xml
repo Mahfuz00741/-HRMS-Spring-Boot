@@ -37,6 +37,9 @@
     </option>
   </component>
   <component name="ProjectId" id="20tcHcXcmIOJbHGFZlUCYXPYjKc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -54,7 +57,7 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager" selected="Spring Boot.AttendanceApplication">
+  <component name="RunManager" selected="Spring Boot.EurekaRegistryServerApplication">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="admin" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ibc.adm.Application" />

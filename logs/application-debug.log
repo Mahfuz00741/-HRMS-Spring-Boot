@@ -4322,3 +4322,7 @@ org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique co
 2021-11-14 15:10:19,328 INFO  [http-nio-9095-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/attendance] : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-11-14 16:01:44,801 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51m21s382ms483µs841ns).
 2021-11-14 16:01:44,818 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 16:06:44,820 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 16:11:44,820 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 16:16:44,820 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 16:21:44,819 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
