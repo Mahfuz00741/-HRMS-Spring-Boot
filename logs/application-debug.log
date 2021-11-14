@@ -43,3 +43,5 @@
 2021-11-14 10:11:39,874 INFO  [restartedMain] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration : Updating port to 9095
 2021-11-14 10:11:39,905 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient : DiscoveryClient_ATTENDANCE-SERVICE/ibcsoutsource01.ibcs-primax.com:ATTENDANCE-SERVICE:9095 - registration status: 204
 2021-11-14 10:11:39,940 INFO  [restartedMain] com.ibcs.attendance.AttendanceApplication : Started AttendanceApplication in 11.518 seconds (JVM running for 14.687)
+2021-11-14 10:15:10,283 INFO  [http-nio-9095-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/attendance] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-14 10:16:39,476 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
