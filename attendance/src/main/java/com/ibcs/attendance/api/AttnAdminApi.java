@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,9 +27,10 @@ public class AttnAdminApi {
         return attnAdminService.findAll(PageRequest.of(0, 10), null);
     }
 
-    @PostMapping("/")
-    public AttnAdminDto newEmp(@RequestBody AttnAdminDto newEmp) {
-        return attnAdminService.save(newEmp);
+    @PostMapping("/save")
+    public ResponseEntity newattnAdmin(@RequestBody AttnAdminDto newattnAdmin) {
+        System.out.println("TEST:::"+newattnAdmin);
+        return attnAdminService.save(newattnAdmin);
     }
 
     @GetMapping("/attnAdmin/{id}")

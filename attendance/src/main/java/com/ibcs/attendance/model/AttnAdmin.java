@@ -1,13 +1,16 @@
 package com.ibcs.attendance.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 
 @Entity
@@ -21,20 +24,26 @@ public class AttnAdmin extends BaseEntity{
     @Column(name = "APP_DATE", nullable=false)
     private LocalDate appDate;
 
-    @Column(unique = true, name = "ADM_USER_ID")
+    @Column(name = "ADM_USER_ID", nullable = false)
     private Long userId;
 
     @Column(name = "HR_EMP_ID", nullable = false)
     private Long empId;
 
     @Column(name = "ON_MOMENT", nullable=false)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "YYYY-MM-dd HH:mm:ss.Z")
     private LocalDateTime OnMoment;
 
     @Column(name = "_IN", nullable=false)
-    private LocalDateTime _in;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "YYYY-MM-dd HH:mm:ss.Z")
+    private LocalDateTime in;
 
     @Column(name = "_OUT", nullable=false)
-    private LocalDateTime _out;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "YYYY-MM-dd HH:mm:ss.Z")
+    private LocalDateTime out;
 
     @Column(length=254)
     private String remark;

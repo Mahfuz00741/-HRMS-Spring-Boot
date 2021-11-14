@@ -1,5 +1,6 @@
 package com.ibcs.attendance.service;
 
+import com.ibcs.attendance.ResponseDTO;
 import com.ibcs.attendance.dto.AttnAdminDto;
 import com.ibcs.attendance.model.AttnAdmin;
 import com.ibcs.attendance.repo.AttnAdminRepo;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,9 +28,8 @@ public class AttnAdminService {
 
         AttnAdminDto attnAdminDto = new AttnAdminDto();
 
-        BeanUtils.copyProperties(attnAdmin, attnAdminDto, "userId", "empId");
-        attnAdminDto.setEmpId(attnAdmin.getEmpId());
-        attnAdminDto.setUserId(attnAdmin.getUserId());
+        BeanUtils.copyProperties(attnAdmin, attnAdminDto);
+
         return attnAdminDto;
     }
 
@@ -35,29 +37,30 @@ public class AttnAdminService {
 
         AttnAdmin attnAdmin = attnAdminRepo.getById(id);
 
-        BeanUtils.copyProperties(attnAdminDto, attnAdmin, "id", "userId", "empId");
-        attnAdminDto.setEmpId(attnAdmin.getEmpId());
-        attnAdminDto.setUserId(attnAdmin.getUserId());
+        BeanUtils.copyProperties(attnAdminDto, attnAdmin);
 
         return conv(attnAdminRepo.save(attnAdmin));
     }
 
-    public AttnAdminDto save(AttnAdminDto attnAdminDto) {
+    public ResponseEntity<ResponseDTO> save(AttnAdminDto attnAdminDto) {
 
         AttnAdmin attnAdmin = new AttnAdmin();
 
-        BeanUtils.copyProperties(attnAdminDto, attnAdmin, "userId", "empId");
-        attnAdminDto.setEmpId(attnAdmin.getEmpId());
-        attnAdminDto.setUserId(attnAdmin.getUserId());
+        BeanUtils.copyProperties(attnAdminDto, attnAdmin);
 
-        return conv(attnAdminRepo.save(attnAdmin));
+        attnAdmin = attnAdminRepo.saveAndFlush(attnAdmin);
+        attnAdminDto = conv(attnAdmin);
+        return new ResponseEntity<>(
+                new ResponseDTO<>(
+                        "",
+                        "",
+                        attnAdminDto
+                ), HttpStatus.OK);
     }
 
 
     public Page<AttnAdminDto> findAll(Pageable pageable, String sText) {
         Page<AttnAdmin> attnAdmin = attnAdminRepo.findAllCustom(pageable, sText);
-
-        //PageRequest<EmpDto> empDtos= PageRequest.of(pageable.getPageNumber(), pageable.getPageSize());
 
         List<AttnAdminDto> ss = new ArrayList(pageable.getPageSize());
         for (AttnAdmin pp : attnAdmin.getContent()) {
