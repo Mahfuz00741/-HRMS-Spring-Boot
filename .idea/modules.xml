@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/HRMS-Spring-Boot.iml" filepath="$PROJECT_DIR$/.idea/HRMS-Spring-Boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/admin/admin.iml" filepath="$PROJECT_DIR$/admin/admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/attendance/attendance.iml" filepath="$PROJECT_DIR$/attendance/attendance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eurekaRegistryServer.iml" filepath="$PROJECT_DIR$/eureka/eurekaRegistryServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hr/hr.iml" filepath="$PROJECT_DIR$/hr/hr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/report/report.iml" filepath="$PROJECT_DIR$/report/report.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tnl/tnl.iml" filepath="$PROJECT_DIR$/tnl/tnl.iml" />
     </modules>
   </component>
 </project>
