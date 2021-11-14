@@ -4204,3 +4204,73 @@ org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique co
 2021-11-14 14:50:59,423 INFO  [restartedMain] com.ibcs.attendance.AttendanceApplication : Started AttendanceApplication in 7.113 seconds (JVM running for 9.195)
 2021-11-14 14:51:20,149 INFO  [http-nio-9095-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/attendance] : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-11-14 14:55:58,958 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 15:00:58,957 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 15:05:58,956 INFO  [AsyncResolver-bootstrap-executor-0] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 15:08:21,222 INFO  [SpringApplicationShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry : Unregistering application ATTENDANCE-SERVICE with eureka with status DOWN
+2021-11-14 15:08:21,223 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : Saw local status change event StatusChangeEvent [timestamp=1636880901223, current=DOWN, previous=UP]
+2021-11-14 15:08:21,224 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient : DiscoveryClient_ATTENDANCE-SERVICE/ibcsoutsource01.ibcs-primax.com:ATTENDANCE-SERVICE:9095: registering service...
+2021-11-14 15:08:21,230 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient : DiscoveryClient_ATTENDANCE-SERVICE/ibcsoutsource01.ibcs-primax.com:ATTENDANCE-SERVICE:9095 - registration status: 204
+2021-11-14 15:08:21,348 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-14 15:08:21,377 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2021-11-14 15:08:21,388 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2021-11-14 15:08:21,390 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : Shutting down DiscoveryClient ...
+2021-11-14 15:08:24,395 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : Unregistering ...
+2021-11-14 15:08:24,402 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : DiscoveryClient_ATTENDANCE-SERVICE/ibcsoutsource01.ibcs-primax.com:ATTENDANCE-SERVICE:9095 - deregister  status: 200
+2021-11-14 15:08:24,415 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : Completed shut down of DiscoveryClient
+2021-11-14 15:08:58,137 INFO  [restartedMain] com.ibcs.attendance.AttendanceApplication : Starting AttendanceApplication using Java 11.0.10 on ibcsoutsource01 with PID 13924 (D:\Projects\JavaProject\IBCS-Project-All\HRMS-Spring-Boot\attendance\target\classes started by Intern in D:\Projects\JavaProject\IBCS-Project-All\HRMS-Spring-Boot)
+2021-11-14 15:08:58,139 INFO  [restartedMain] com.ibcs.attendance.AttendanceApplication : No active profile set, falling back to default profiles: default
+2021-11-14 15:08:58,226 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-14 15:08:58,226 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-14 15:08:59,626 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-14 15:08:59,731 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 1 JPA repository interfaces.
+2021-11-14 15:09:00,097 INFO  [restartedMain] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=3b6fb6c2-1c97-3968-a02b-2c5082820897
+2021-11-14 15:09:01,164 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9095 (http)
+2021-11-14 15:09:01,175 INFO  [restartedMain] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-11-14 15:09:01,175 INFO  [restartedMain] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-14 15:09:01,328 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/attendance] : Initializing Spring embedded WebApplicationContext
+2021-11-14 15:09:01,329 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3102 ms
+2021-11-14 15:09:01,826 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-14 15:09:01,909 INFO  [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-14 15:09:02,106 INFO  [restartedMain] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-14 15:09:02,254 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-11-14 15:09:02,626 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-11-14 15:09:02,663 INFO  [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-11-14 15:09:03,599 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-14 15:09:03,609 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-14 15:09:04,302 WARN  [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-14 15:09:04,797 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2021-11-14 15:09:04,925 INFO  [restartedMain] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2021-11-14 15:09:05,102 WARN  [restartedMain] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-11-14 15:09:05,209 INFO  [restartedMain] org.springframework.cloud.netflix.eureka.InstanceInfoFactory : Setting initial instance status as: STARTING
+2021-11-14 15:09:05,274 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Initializing Eureka in region us-east-1
+2021-11-14 15:09:05,282 INFO  [restartedMain] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver : Resolving eureka endpoints via configuration
+2021-11-14 15:09:05,308 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Disable delta property : false
+2021-11-14 15:09:05,309 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Single vip registry refresh property : null
+2021-11-14 15:09:05,309 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Force full registry fetch : false
+2021-11-14 15:09:05,309 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Application is null : false
+2021-11-14 15:09:05,309 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Registered Applications size is zero : true
+2021-11-14 15:09:05,309 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Application version is -1: true
+2021-11-14 15:09:05,309 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Getting all instance registry info from the eureka server
+2021-11-14 15:09:05,946 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : The response status is 200
+2021-11-14 15:09:05,950 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Starting heartbeat executor: renew interval is: 30
+2021-11-14 15:09:05,953 INFO  [restartedMain] com.netflix.discovery.InstanceInfoReplicator : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-11-14 15:09:05,960 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Discovery Client initialized at timestamp 1636880945958 with initial instances count: 1
+2021-11-14 15:09:05,963 INFO  [restartedMain] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry : Registering application ATTENDANCE-SERVICE with eureka with status UP
+2021-11-14 15:09:05,963 INFO  [restartedMain] com.netflix.discovery.DiscoveryClient : Saw local status change event StatusChangeEvent [timestamp=1636880945963, current=UP, previous=STARTING]
+2021-11-14 15:09:05,965 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient : DiscoveryClient_ATTENDANCE-SERVICE/ibcsoutsource01.ibcs-primax.com:ATTENDANCE-SERVICE:9095: registering service...
+2021-11-14 15:09:05,999 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 9095 (http) with context path '/attendance'
+2021-11-14 15:09:06,001 INFO  [restartedMain] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration : Updating port to 9095
+2021-11-14 15:09:06,028 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient : DiscoveryClient_ATTENDANCE-SERVICE/ibcsoutsource01.ibcs-primax.com:ATTENDANCE-SERVICE:9095 - registration status: 204
+2021-11-14 15:09:06,068 INFO  [restartedMain] com.ibcs.attendance.AttendanceApplication : Started AttendanceApplication in 9.723 seconds (JVM running for 19.297)
+2021-11-14 15:09:33,374 INFO  [SpringApplicationShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry : Unregistering application ATTENDANCE-SERVICE with eureka with status DOWN
+2021-11-14 15:09:33,374 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : Saw local status change event StatusChangeEvent [timestamp=1636880973374, current=DOWN, previous=UP]
+2021-11-14 15:09:33,375 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient : DiscoveryClient_ATTENDANCE-SERVICE/ibcsoutsource01.ibcs-primax.com:ATTENDANCE-SERVICE:9095: registering service...
+2021-11-14 15:09:33,380 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient : DiscoveryClient_ATTENDANCE-SERVICE/ibcsoutsource01.ibcs-primax.com:ATTENDANCE-SERVICE:9095 - registration status: 204
+2021-11-14 15:09:33,427 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-14 15:09:33,432 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2021-11-14 15:09:33,440 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2021-11-14 15:09:33,441 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : Shutting down DiscoveryClient ...
+2021-11-14 15:09:36,443 WARN  [DiscoveryClient-0] com.netflix.discovery.TimedSupervisorTask : task supervisor shutting down, can't accept the task
+2021-11-14 15:09:36,447 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : Unregistering ...
+2021-11-14 15:09:36,453 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : DiscoveryClient_ATTENDANCE-SERVICE/ibcsoutsource01.ibcs-primax.com:ATTENDANCE-SERVICE:9095 - deregister  status: 200
+2021-11-14 15:09:36,466 INFO  [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient : Completed shut down of DiscoveryClient
