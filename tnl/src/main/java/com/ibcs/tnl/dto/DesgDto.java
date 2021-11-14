@@ -14,4 +14,5 @@ public class DesgDto extends BaseDto {
     private String name;
 
     private boolean active;
+
 }
