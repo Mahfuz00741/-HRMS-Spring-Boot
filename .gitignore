@@ -44,3 +44,7 @@ secrets.yml
 .idea/compiler.xml
 .idea/modules.xml
 attendance/attendance.iml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/sonarlint/issuestore/index.pb
+.idea/vcs.xml
