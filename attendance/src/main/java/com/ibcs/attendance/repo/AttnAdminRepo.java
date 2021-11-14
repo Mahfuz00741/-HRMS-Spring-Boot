@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
 public interface AttnAdminRepo extends JpaRepository<AttnAdmin, Long> {
 
 //    @Query("SELECT m FROM AttnAdmin m WHERE :sText is null or lower( m.appDate || m.OnMoment ) LIKE '%lower(:sText)%' ORDER BY m.appDate")
-    @Query("SELECT m FROM AttnAdmin m WHERE :sText   LIKE '%lower(:sText)%' ")
+    @Query("SELECT m FROM AttnAdmin m ")
     Page<AttnAdmin> findAllCustom(Pageable pageable, @Param("sText") String sText);
 }
