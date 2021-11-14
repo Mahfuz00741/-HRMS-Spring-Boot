@@ -1,14 +1,0 @@
-
-o	java:S116"SRename this field "OnMoment" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å¡Ç8íôåïÑ/
-H
-java:S2160"+Override the "equals" method in this class.(â‘óØ8ñôåïÑ/
-H
-java:S1068"+Remove this unused "appDate" private field.(Ç½‰Ï8–õåïÑ/
-L
-java:S1068"*Remove this unused "userId" private field.(Â—‹¼úÿÿÿÿ8˜õåïÑ/
-E
-java:S1068")Remove this unused "empId" private field.(ù€s8˜õåïÑ/
-G
-java:S1068"*Remove this unused "remark" private field.(µ»Ûã8™õåïÑ/
-L
-java:S1068"/Remove this unused "userMessage" private field.(ıŸÀ‰8™õåïÑ/
