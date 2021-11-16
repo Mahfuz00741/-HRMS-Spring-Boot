@@ -33,3 +33,7 @@
 2021-11-09 15:03:06,471 INFO com.ibcs.hr.HrApplication [restartedMain] Started HrApplication in 11.973 seconds (JVM running for 16.117)
 2021-11-09 17:02:50,484 TRACE com.ibcs.hr.api.EmpApi [http-nio-9090-exec-2] getAll executed from api
 2021-11-09 17:02:50,484 TRACE com.ibcs.hr.api.DeptApi [http-nio-9090-exec-1]  getAll executed from dept Api
+2021-11-16 15:04:41,516 INFO com.ibcs.hr.HrApplication [restartedMain] Starting HrApplication using Java 11.0.11 on ibcsdev17 with PID 12984 (D:\project\Git\This week 2\HRMS-Spring-Boot\hr\target\classes started by Intern in D:\project\Git\This week 2\HRMS-Spring-Boot\hr)
+2021-11-16 15:04:41,519 DEBUG com.ibcs.hr.HrApplication [restartedMain] Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-11-16 15:04:41,520 INFO com.ibcs.hr.HrApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-11-16 15:05:07,841 INFO com.ibcs.hr.HrApplication [restartedMain] Started HrApplication in 27.457 seconds (JVM running for 31.666)
