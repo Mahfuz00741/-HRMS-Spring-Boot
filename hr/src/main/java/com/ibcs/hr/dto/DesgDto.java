@@ -13,5 +13,5 @@ public class DesgDto extends BaseEntityDto {
 
     private boolean active;
 
-    private String userMessage;
+  //  private ResponseDto responseDto;
 }

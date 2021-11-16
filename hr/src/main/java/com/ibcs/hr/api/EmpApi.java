@@ -1,62 +1,81 @@
 package com.ibcs.hr.api;
 
-import com.ibcs.hr.dto.*;
+import com.ibcs.hr.dto.DeptDto;
+import com.ibcs.hr.dto.EmpDto;
+import com.ibcs.hr.dto.ResponseDto;
+import com.ibcs.hr.entity.Emp;
 import com.ibcs.hr.service.EmpService;
-import lombok.extern.slf4j.Slf4j;
+import net.sf.jasperreports.engine.JRException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.QueryParam;
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/empApi")
-@Slf4j
 public class EmpApi {
+
+
+
+    Logger logger = LoggerFactory.getLogger(EmpApi.class);
     @Autowired
     private EmpService empService;
 
     @GetMapping("/")
-    public Page<EmpDto> all() {
+    public Page<EmpDto> getAll() {
+        logger.trace("getAll executed from api");
         return empService.findAll(PageRequest.of(0, 10), null);
     }
-
-    @GetMapping("/userDetails/{id}")
-    public ResponsFeignClientDto userView(@PathVariable Long id) {
-        log.info("Request received for get user details for id {}", id);
-        ResponsFeignClientDto response = empService.findUserFeignClient(id);
-        log.info("Response return for {} object {}", id, response);
-        return response;
+    @GetMapping("/list/")
+    public List<EmpDto> getAllWithoutPage() {
+        logger.trace("getAll executed from api");
+        return empService.findAllWithoutPage();
     }
 
-    @GetMapping(value = "/{id}")
-    UserDto ByWeb(@PathVariable("id") Integer id) {
-        return  empService.findByUserWebId(id);
+    @GetMapping("/{id}")
+    public Object getOne(@PathVariable Long id) {
+        logger.trace("getOne executed from api");
+        return empService.findById(id);
+    }
+
+    @GetMapping("/withUser/{id}")
+    public Object getEmpWithUser(@PathVariable Long id) {
+        logger.trace("getEmpWithUser executed from api");
+        return empService.empWithUser(id);
     }
 
     @PostMapping("/")
-    public EmpDto newEmp(@RequestBody EmpDto newEmp) {
+    public Object createEmp(@RequestBody EmpDto newEmp) {
+        logger.trace("createEmp executed from api");
         return empService.save(newEmp);
     }
 
-    @GetMapping("/emp/{id}")
-    public EmpDto EmpOneView(@PathVariable Long id) {
 
-        log.info("Request received for get user details for id {}", id);
-        EmpDto response = empService.findById(id);
-        log.info("Response return for {} object {}", id, response);
-        return response;
-
-    }
 
     @PutMapping("/{id}")
-    public EmpDto replaceEmp(@RequestBody EmpDto newEmp, @PathVariable Long id) {
+    public Object updateEmp(@RequestBody EmpDto newEmp, @PathVariable Long id) {
+        logger.trace("updateEmp executed from api");
         return empService.update(newEmp, id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteEmp(@PathVariable Long id) {
-        empService.deleteById(id);
+    public ResponseDto deleteEmp(@PathVariable Long id) {
+
+        logger.trace("delteEmp executed from api");
+        return empService.deleteById(id);
     }
 
+    //------------------------------------------------------------
+//    @GetMapping("/reportDept")
+//    public ResponseEntity generateReportDept(@QueryParam("deptId") Integer deptId, @QueryParam("type") String type) throws FileNotFoundException, JRException, SQLException {
+//        return empService.exportReportWithDepartment(type, deptId);
+//    }
 }

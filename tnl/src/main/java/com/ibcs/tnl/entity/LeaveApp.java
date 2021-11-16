@@ -9,20 +9,20 @@ import java.time.LocalDate;
 
 
 @Entity
-@Table(name="TNL_LEAVE_APP")
+@Table(name="TNL_LEAVE_APPLICATION")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class LeaveApp extends BaseEntity{
 
 
-    @Column(name = "APP_DATE", nullable=false)
+    @Column(name = "APPLICATION_DATE", nullable=false)
     private LocalDate appDate;
 
     @Column(name = "LEAVE_FROM_DATE", nullable=false)
     private LocalDate fromDate;
 
-    @Column(name = "LEAVE_TO_DATE", nullable=false)
+    @Column(name = "LEAVE_UPTO_DATE", nullable=false)
     private LocalDate toDate;
 
     @Enumerated(EnumType.STRING)
@@ -31,17 +31,17 @@ public class LeaveApp extends BaseEntity{
     @Column()
     private String reason;
 
-    @Column(name = "HR_EMP_ID", nullable = false)
+    @Column(name = "EMPLOYEE_ID", nullable = false)
     private Long employeeId;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "LEAVE_TYPE_ID", nullable = false)
+    @JoinColumn(name = "APPLICATION_LEAVE_TYPE_ID", nullable = false)
     private LeaveType  leaveTypeId;
 
     @Column(name = "ON_LEAVE_CONTACT_NO",nullable=false, length=13)
     private String onLeaveContactNo;
 
-    @Column(name = "HR_EMP_RESPONSIBLE_PERSON_ID", nullable = false,  length=13)
+    @Column(name = "RESPONSIBLE_PERSON_ID", nullable = false,  length=13)
     private Long responsiblePersonId;
 
     @Column(name = "IS_ACTIVE", nullable = false)
@@ -50,9 +50,7 @@ public class LeaveApp extends BaseEntity{
     @Column(length=254)
     private String remark;
 
-    @Enumerated(EnumType.STRING)
-    @Column(length = 10)
-    private Status status;
+
 
 
 }

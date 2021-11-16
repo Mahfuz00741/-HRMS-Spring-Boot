@@ -1,12 +1,15 @@
 package com.ibcs.hr.dto;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto extends BaseEntityDto{
+public class UserDto extends BaseEntityDto {
+
 
     private String photo;
 
@@ -17,8 +20,12 @@ public class UserDto extends BaseEntityDto{
     private String email;
 
     private String mobileNo;
-
+    
     private String password;
 
     private boolean active;
+
+   // private ResponseDto responseDto;
+
+   
 }

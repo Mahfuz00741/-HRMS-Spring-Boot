@@ -1,65 +1,74 @@
 package com.ibcs.tnl.api;
 
+import com.ibcs.tnl.dto.FeignResponseDto;
 import com.ibcs.tnl.dto.LeaveAppDto;
+import com.ibcs.tnl.dto.ResponseDto;
 import com.ibcs.tnl.service.LeaveAppService;
-import net.sf.jasperreports.engine.JRException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.sql.DataSource;
-import javax.ws.rs.QueryParam;
-import java.io.FileNotFoundException;
-import java.sql.SQLException;
-import java.util.Date;
+import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/leaveAppApi")
 public class LeaveAppApi {
 
     @Autowired
     private LeaveAppService leaveAppService;
+    Logger logger = LoggerFactory.getLogger(LeaveAppApi.class);
 
-    @GetMapping("/")
-    Page<LeaveAppDto> all() {
+    @GetMapping("/all/")
+    Page<LeaveAppDto> getAll() {
         return leaveAppService.findAll(PageRequest.of(0, 10), null);
     }
+
+    @GetMapping("/all/list/")
+    List<LeaveAppDto> getAllList() {
+        return leaveAppService.findAllList();
+    }
+/*
     @GetMapping("/{id}")
-    LeaveAppDto one(@PathVariable Long id) {
+    LeaveAppDto findById(@PathVariable Long id) {
         return leaveAppService.findById(id);
     }
-    @PostMapping("/")
-    LeaveAppDto newApp(@RequestBody LeaveAppDto newLeaveAppDto) {
+*/
+
+    @GetMapping("/{id}")
+    FeignResponseDto findByIdWithemp(@PathVariable Long id) {
+        logger.trace("Okay from findByIdWithemp ");
+
+
+            return leaveAppService.findLeaveAppWithEmp(id);
+
+
+    }
+
+
+    @PostMapping("/create/")
+    public Object createLeaveApp(@RequestBody LeaveAppDto newLeaveAppDto) {
+        logger.trace("Okay from createLeaveApp ");
         return leaveAppService.save(newLeaveAppDto);
     }
 
 
+    @PutMapping("/update/{id}")
+    public Object updateLeaveApp(@RequestBody LeaveAppDto newLeaveAppDto, @PathVariable Long id) {
 
-    @PutMapping("/{id}")
-     public LeaveAppDto replaceApp(@RequestBody LeaveAppDto newLeaveAppDto, @PathVariable Long id) {
-
-        return leaveAppService.update(newLeaveAppDto,id);
+        logger.trace("Okay from updateLeaveApp");
+        return leaveAppService.update(newLeaveAppDto, id);
 
     }
 
-    @DeleteMapping("/{id}")
-    void deleteApp(@PathVariable Long id) {
-        leaveAppService.deleteById(id);
+    @DeleteMapping("/delete/{id}")
+    ResponseDto deleteLeaveApp(@PathVariable Long id) {
+        logger.trace("Okay from deleteLeaveApp");
+        return leaveAppService.deleteById(id);
     }
 
-    ////// Report Part Api //////
-//    P_FROM_DATE  P_TO_DATE  P_EMP_HR_DEPT_ID
-//    http://localhost:9093/leave/leaveAppApi/reportLeaveStutas?deptId=1&fromDate=2021-10-13&toDate=2021-10-15&type=pdf
-    //   http://localhost:9090/hr/empApi/reportDept?deptId=1&type=pdf
-    @GetMapping("/reportLeaveStutas")
-    public ResponseEntity generateReportDept( @QueryParam("type") String type,
-                                              @QueryParam("deptId") Integer deptId,
-                                              @QueryParam("fromDate") Date fromDate,
-                                              @QueryParam("toDate") Date toDate)
-            throws FileNotFoundException, JRException, SQLException {
-        return leaveAppService.exportReportWithLeaveStutas(type, deptId, fromDate, toDate);
-    }
+
+
 }

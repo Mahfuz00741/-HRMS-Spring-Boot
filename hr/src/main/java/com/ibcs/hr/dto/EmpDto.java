@@ -42,6 +42,5 @@ public class EmpDto extends BaseEntityDto {
 
     private Long supervisorId;
 
-    private String userMessage;
-
+    //private ResponseDto responseDto;
 }

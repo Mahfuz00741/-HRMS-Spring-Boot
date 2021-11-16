@@ -8,24 +8,25 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="TNL_LEAVE_TYPE")
+@Table(name="TNL_LEAVE_APP")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class LeaveType extends BaseEntity {
 
-    @Column(nullable=false, length=35)
+    @Column( nullable=false, length=35)
     private String name;
 
-    @Column(name="ALLOW_NO_OF_LEAVE_MONTH", nullable = false)
-    private Integer allowedLeaveNoMonthly;
 
-    @Column(name="ALLOW_NO_OF_LEAVE_YEARLY",nullable = false )
-    private Integer allowNoOfLeaveYearly;
+    @Column(name="ALLOWED_NO_LEAVE_Monthly", nullable=false)
+    private Long allowedLeaveNoMonthly;
+
+    @Column(name="ALLOWED_NO_LEAVE_Monthly_Yearly", nullable=false)
+    private Long allowedLeaveNoYearly;
+
 
     @Column(name = "IS_ACTIVE", nullable = false)
     private boolean active;
-
 
 
 

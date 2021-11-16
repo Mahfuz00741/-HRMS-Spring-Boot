@@ -20,5 +20,5 @@ public class DeptDto extends BaseEntityDto {
 
     private boolean active;
 
-    private String userMessage;
+    //private ResponseDto responseDto;
 }

@@ -1,43 +1,31 @@
 package com.ibcs.tnl.service;
 
-import com.ibcs.tnl.dto.DesgDto;
+import com.ibcs.tnl.api.LeaveAppApi;
 import com.ibcs.tnl.dto.EmpDto;
+import com.ibcs.tnl.dto.FeignResponseDto;
 import com.ibcs.tnl.dto.LeaveAppDto;
-import com.ibcs.tnl.dto.ResponsFeignClientDto;
+import com.ibcs.tnl.dto.ResponseDto;
 import com.ibcs.tnl.entity.LeaveApp;
 import com.ibcs.tnl.repo.LeaveAppRepo;
 import com.ibcs.tnl.repo.LeaveTypeRepo;
-import com.ibcs.tnl.Client.Consumer;
-import lombok.extern.slf4j.Slf4j;
-import net.sf.jasperreports.engine.*;
+import com.ibcs.tnl.consume.EmpConsumer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
-import javax.sql.DataSource;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
-@Slf4j
 public class LeaveAppService {
-
+    Logger logger = LoggerFactory.getLogger(LeaveAppApi.class);
     @Autowired
     private LeaveAppRepo leaveAppRepo;
 
@@ -45,9 +33,11 @@ public class LeaveAppService {
     private LeaveTypeRepo leaveTypeRepo;
 
     @Autowired
-    private Consumer consumer;
+    private EmpConsumer empConsumer; // have to be active for feign client
 
-
+    @Autowired
+    private WebClient.Builder webClientBuilder;
+    //WebClient webClient = WebClient.create("http://localhost:9091"); //another way of webclient
 
     private LeaveAppDto conv(LeaveApp leaveApp) {//converting<-------------
         LeaveAppDto leaveAppDto = new LeaveAppDto();
@@ -62,12 +52,12 @@ public class LeaveAppService {
 
         BeanUtils.copyProperties(leaveAppDto, leaveApp, "leaveTypeId");
         leaveApp.setLeaveTypeId(leaveTypeRepo.getById(leaveAppDto.getLeaveTypeId()));
-
         return leaveApp;
     }
 
 
-    public Page<LeaveAppDto> findAll(Pageable pageable, String sText) {//all
+    public Page<LeaveAppDto> findAll(Pageable pageable, String sText) {//---------------all
+        logger.trace("find all executed from service");
         Page<LeaveApp> leaveApp = leaveAppRepo.findAllCustom(pageable, sText);
         //PageRequest<LeaveAppDto> deptDtos= PageRequest.of(pageable.getPageNumber(), pageable.getPageSize());
 
@@ -75,69 +65,127 @@ public class LeaveAppService {
         for (LeaveApp pp : leaveApp.getContent()) {
             ss.add(conv(pp));
         }
-
         Page<LeaveAppDto> deptDtos = new PageImpl(ss, pageable, leaveApp.getTotalElements());
-
         return deptDtos;
     }
+    public List<LeaveAppDto> findAllList() {//---------------all
+        logger.trace("find all executed from service");
+        List<LeaveApp> leaveApp = leaveAppRepo.findAll();
+        //PageRequest<LeaveAppDto> deptDtos= PageRequest.of(pageable.getPageNumber(), pageable.getPageSize());
 
-    public ResponsFeignClientDto findUserFeignClient(Long id){
-        try {
-            ResponsFeignClientDto responsFeignClientDto = new ResponsFeignClientDto();
-            LeaveApp leaveApp = leaveAppRepo.getById(id);
-            if(leaveApp == null){
-                return new ResponsFeignClientDto("User not found", null, null);
-            }else {
-
-                responsFeignClientDto.setLeaveAppDto(conv(leaveApp));
-
-                EmpDto empDto = consumer.getEmp(leaveApp.getId());
-                responsFeignClientDto.setEmpDto(empDto);
-                responsFeignClientDto.setUserMessage("Successfully get user information.");
-
-                return responsFeignClientDto;
-            }
+        List<LeaveAppDto> ss = new ArrayList();
+        for (LeaveApp pp : leaveApp) {
+            ss.add(conv(pp));
         }
-        catch (Exception e) {
-            log.error("Exception occurred during getting user info", e);
-            return new ResponsFeignClientDto(e.getMessage(), null, null);
-        }
+        //List<LeaveAppDto> deptDtos = new PageImpl(ss, pageable, leaveApp.getTotalElements());
+        return ss;
     }
 
-    public LeaveAppDto findById(Long id) { //byId
-
-        try {
-            LeaveAppDto leaveAppDto = new LeaveAppDto();
-            LeaveApp leaveApp = leaveAppRepo.getById(id);
-            if (leaveApp == null) {
-                return new LeaveAppDto(null, null, null, null, null, null, null, null, null, false, null, "User not found");
-            } else {
-                BeanUtils.copyProperties(leaveApp, leaveAppDto);
-                leaveAppDto.setUserMessage("Successfully get user information.");
-
-                return leaveAppDto;
-            }
-
-        } catch (Exception e) {
-            log.error("Exception occurred during getting user info", e);
-            return new LeaveAppDto(null, null, null, null, null, null, null, null, null, false, null, "User not found");
-        }
-    }
-
-    public LeaveAppDto save(LeaveAppDto leaveAppDto) {//post
-        return conv(leaveAppRepo.save(conv(leaveAppDto)));
-    }
-
-    public LeaveAppDto update(LeaveAppDto leaveAppDto, Long id) {
-
+/*    public LeaveAppDto findById(Long id) { //byId
         LeaveApp leaveApp = leaveAppRepo.getById(id);
-        BeanUtils.copyProperties(leaveAppDto, leaveApp, "id");
 
-        return conv(leaveAppRepo.save(leaveApp));
+        if(leaveApp==null)
+        {
+            throw new Exception();
+        }
+
+        return conv(leaveApp);
+
+    }*/
+
+    public FeignResponseDto findLeaveAppWithEmp(Long id) {//-------------------findLeaveAppWithEmp
+        logger.trace(" findLeaveAppWithEmp executed from service");
+
+        FeignResponseDto feignResponseDto = new FeignResponseDto();
+
+        if (!leaveAppRepo.existsById(id)) {
+            logger.trace("id not found");
+            ResponseDto responseDto = new ResponseDto(ResponseDto.ResponseStatus.ERROR, "Leave Application not found", id);
+            feignResponseDto.setResponseDto(responseDto);
+            return feignResponseDto;
+
+        }
+        LeaveApp leaveApp = leaveAppRepo.getById(id);
+        feignResponseDto.setLeaveAppDto(conv(leaveApp));
+
+        EmpDto empDto = webClientBuilder.build()
+                .get()
+                .uri("http://localhost:9090/hr/empApi/" + leaveApp.getEmployeeId())
+                .retrieve()
+                .bodyToMono(EmpDto.class)
+                .block();
+
+
+//        EmpDto empDto = empConsumer.getEmp(leaveApp.getEmployeeId()); //for feign client
+
+//
+
+        feignResponseDto.setEmpDto(empDto);
+
+        ResponseDto responseDto = new ResponseDto(ResponseDto.ResponseStatus.SUCCESS, "Data retrieved", empDto.getUserId());
+        feignResponseDto.setResponseDto(responseDto);
+
+        return feignResponseDto;
+
+
+
+    /*    Mono<EmpDto> empDto =  webClient.get()
+                .uri("/hr/empApi/" + leaveApp.getEmployeeId())
+                .retrieve().bodyToMono(EmpDto.class);
+*/
+
     }
 
-    public void deleteById(Long id) {//delete
-        leaveAppRepo.deleteById(id);
+
+    public Object save(LeaveAppDto leaveAppDto) {//-------------------post
+        logger.trace(" findLeaveAppWithEmp executed from service");
+        try {
+                 leaveAppDto =conv(leaveAppRepo.save(conv(leaveAppDto)));;
+            return new ResponseDto(ResponseDto.ResponseStatus.ERROR, "Application created", leaveAppDto);
+        } catch (Exception e) {
+           // ResponseDto responseDto = new ResponseDto(ResponseDto.ResponseStatus.ERROR, "Application creation is not possible", e);
+            //leaveAppDto.setResponseDto(responseDto);
+            return new ResponseDto(ResponseDto.ResponseStatus.ERROR, "Application creation is not possible", e);
+        }
+
     }
+
+    /*
+    public LeaveAppDto update(LeaveAppDto leaveAppDto) {
+           return conv(leaveAppRepo.saveAndFlush(conv(leaveAppDto)));
+       }
+   */
+    public Object update(LeaveAppDto leaveAppDto, Long id) {//----------------------update
+        logger.trace("update executed from service");
+        if (!leaveAppRepo.existsById(id)) {
+
+            //leaveAppDto.setResponseDto(responseDto);
+            return  new ResponseDto(ResponseDto.ResponseStatus.ERROR, "Update is not possible", id);
+        }
+        LeaveApp leaveApp = leaveAppRepo.getById(id);
+        BeanUtils.copyProperties(leaveAppDto, leaveApp, "id", "responseDto");
+        leaveApp.setLeaveTypeId(leaveTypeRepo.getById(leaveAppDto.getLeaveTypeId()));
+
+        leaveApp = leaveAppRepo.save(leaveApp);
+
+        BeanUtils.copyProperties(leaveApp, leaveAppDto, "leaveTypeId", "responseDto");
+        leaveAppDto.setLeaveTypeId(leaveApp.getLeaveTypeId().getId());
+      //  ResponseDto responseDto = new ResponseDto(ResponseDto.ResponseStatus.SUCCESS, "Update done", leaveAppDto.getEmployeeId());
+       // leaveAppDto.setResponseDto(responseDto);
+
+        return new ResponseDto(ResponseDto.ResponseStatus.SUCCESS, "Update done", leaveAppDto);
+    }
+
+
+    public ResponseDto deleteById(Long id) {//delete
+        logger.trace(" deleteById executed from service");
+
+        if (!leaveAppRepo.existsById(id)) {
+            logger.trace(" id is not found");
+            return new ResponseDto(ResponseDto.ResponseStatus.ERROR, "Delete is not possible", id);
+        }
+        return new ResponseDto(ResponseDto.ResponseStatus.SUCCESS, "Deletion complete", id);
+    }
+
 
 }

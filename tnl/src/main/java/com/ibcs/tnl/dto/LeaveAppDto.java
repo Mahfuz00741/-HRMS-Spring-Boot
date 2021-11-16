@@ -37,5 +37,5 @@ public class LeaveAppDto extends BaseDto {
 
     private String remarks;
 
-    private String userMessage;
+ //  private ResponseDto responseDto;
 }

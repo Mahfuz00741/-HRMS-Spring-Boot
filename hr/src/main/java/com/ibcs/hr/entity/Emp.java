@@ -5,15 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "HR_EMP")
+@Table(name="HR_EMP")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Emp extends BaseEntity {
+public class Emp extends BaseEntity{
 
     public enum Gender {
         MALE, FEMALE, OTHERS
@@ -22,39 +21,39 @@ public class Emp extends BaseEntity {
     @Column()
     private String photo;
 
-    @Column(unique = true, nullable = false, length = 6)
+    @Column(unique=true, nullable=false, length=6)
     private String code;
 
-    @Column(nullable = false, length = 35)
+    @Column(nullable=false, length=35)
     private String name;
 
-    @Column(name = "FATHER_NAME", nullable = false, length = 35)
+    @Column(name="FATHER_NAME" , nullable=false, length=35)
     private String fatherName;
 
-    @Column(nullable = false)
-    private LocalDate dob;
+    @Column(nullable=false)
+	private LocalDate dob;
 
-    @Column(nullable = false)
-    private LocalDate doj;
+    @Column(nullable=false)
+	private LocalDate doj;
 
-    @Column(unique = true, nullable = false, length = 17)
+    @Column(unique = true, nullable=false, length=17)
     private String nid;
 
     @Enumerated(EnumType.STRING)
     @Column(length = 6, nullable = false)
     private Gender gender;
 
-    @Email
-    @Column(unique = true, length = 50)
+    //@Email
+    @Column(unique = true, length=50)
     private String email;
 
-    @Column(name = "MOBILE_NO", nullable = false, unique = true, length = 14)
+    @Column(name="MOBILE_NO", nullable = false, unique = true, length=14)
     private String mobileNo;
 
     @Column(name = "IS_ACTIVE", nullable = false)
     private boolean active;
 
-    @Column(unique = true, name = "ADM_USER_ID")
+    @Column(unique = true,name = "ADM_USER_ID")
     private Long userId;
 
     @ManyToOne(optional = false)
