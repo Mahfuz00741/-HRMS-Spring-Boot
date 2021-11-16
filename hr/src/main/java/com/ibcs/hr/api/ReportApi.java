@@ -18,7 +18,7 @@ import javax.ws.rs.QueryParam;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
-@CrossOrigin(origins = "*")
+
 @RestController
 @RequestMapping("/reportApi")
 @Slf4j
