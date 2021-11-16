@@ -1,0 +1,11 @@
+com\ibcs\attendance\model\BaseEntity.class
+com\ibcs\attendance\service\MonthlyProcService.class
+com\ibcs\attendance\dto\MonthlyProcDto.class
+com\ibcs\attendance\model\AttnAdmin.class
+com\ibcs\attendance\model\AttnStage.class
+com\ibcs\attendance\repo\MonthlyProcRepo.class
+com\ibcs\attendance\dto\AttnAdminDto.class
+com\ibcs\attendance\model\MonthlyProc.class
+com\ibcs\attendance\repo\AttnAdminRepo.class
+com\ibcs\attendance\AttendanceApplication.class
+com\ibcs\attendance\dto\BaseDto.class
