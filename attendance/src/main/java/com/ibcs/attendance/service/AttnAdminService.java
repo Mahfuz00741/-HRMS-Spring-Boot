@@ -42,7 +42,7 @@ public class AttnAdminService {
         return conv(attnAdminRepo.save(attnAdmin));
     }
 
-    public ResponseEntity<ResponseDTO> save(AttnAdminDto attnAdminDto) {
+    public ResponseDTO save(AttnAdminDto attnAdminDto) {
 
         AttnAdmin attnAdmin = new AttnAdmin();
 
@@ -50,12 +50,17 @@ public class AttnAdminService {
 
         attnAdmin = attnAdminRepo.saveAndFlush(attnAdmin);
         attnAdminDto = conv(attnAdmin);
-        return new ResponseEntity<>(
-                new ResponseDTO<>(
-                        "",
-                        "",
-                        attnAdminDto
-                ), HttpStatus.OK);
+        if (attnAdminDto != null) {
+            return new ResponseDTO(ResponseDTO.ResponseStatus.SUCCESS, "Registation Successfully", attnAdmin.getId());
+        } else{
+            return new ResponseDTO(ResponseDTO.ResponseStatus.ERROR, "Db save err", attnAdminDto.getEmpId());
+        }
+//        return new ResponseEntity<>(
+//                new ResponseDTO<>(
+//                        "",
+//                        "",
+//                        attnAdminDto
+//                ), HttpStatus.OK);
     }
 
 
@@ -79,17 +84,17 @@ public class AttnAdminService {
             AttnAdminDto attnAdminDto = new AttnAdminDto();
             AttnAdmin attnAdmin = attnAdminRepo.getById(id);
             if (attnAdmin == null) {
-                return new AttnAdminDto( null, null, null, null, null, null, null, "User not found");
+                return new AttnAdminDto( null, null, null, null, null, null, null);
             } else {
 
                 BeanUtils.copyProperties(attnAdmin, attnAdminDto);
-                attnAdminDto.setUserMessage("Successfully get user information.");
+//                attnAdminDto.setUserMessage("Successfully get user information.");
 
                 return attnAdminDto;
             }
         } catch (Exception e) {
             log.error("Exception occurred during getting user info", e);
-            return new AttnAdminDto(null, null, null, null, null, null, null, "User not found");
+            return new AttnAdminDto(null, null, null, null, null, null, null);
 
         }
     }

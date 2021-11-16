@@ -8,10 +8,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResponseDTO<T>{
+//
+//    private String responseStatus;
+//
+//    private String resMessage;
+//
+//    private T payload;
+public enum ResponseStatus{
+    OK, ERROR, CREATED, UPDATED, DELETED,SUCCESS
+}
 
-    private String responseStatus;
+    ResponseStatus status;
 
-    private String resMessage;
+    String message;
 
-    private T payload;
+    T payload;
 }

@@ -1,6 +1,7 @@
 package com.ibcs.attendance.api;
 
 
+import com.ibcs.attendance.ResponseDTO;
 import com.ibcs.attendance.dto.AttnAdminDto;
 import com.ibcs.attendance.repo.AttnAdminRepo;
 import com.ibcs.attendance.service.AttnAdminService;
@@ -27,10 +28,14 @@ public class AttnAdminApi {
         return attnAdminService.findAll(PageRequest.of(0, 10), null);
     }
 
-    @PostMapping("/save")
-    public ResponseEntity newattnAdmin(@RequestBody AttnAdminDto newattnAdmin) {
-        System.out.println("TEST:::"+newattnAdmin);
-        return attnAdminService.save(newattnAdmin);
+    //    @PostMapping("/save")
+//    public ResponseEntity newattnAdmin(@RequestBody AttnAdminDto newattnAdmin) {
+//        System.out.println("TEST:::"+newattnAdmin);
+//        return attnAdminService.save(newattnAdmin);
+//    }
+    @PostMapping(path = "/save")
+    public ResponseDTO newattnAdmin(@RequestBody AttnAdminDto aa) {
+        return attnAdminService.save(aa);
     }
 
     @GetMapping("/attnAdmin/{id}")
