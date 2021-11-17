@@ -1,12 +1,10 @@
 package com.ibcs.hr.service;
 
-import com.ibcs.hr.dto.DesgDto;
-import com.ibcs.hr.dto.UserDto;
-import com.ibcs.hr.entity.Desg;
+import com.ibcs.hr.dto.request.DesgDto;
+import com.ibcs.hr.dto.request.UserDto;
+import com.ibcs.hr.model.Desg;
 import com.ibcs.hr.repo.DesgRepo;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
-import java.io.FileNotFoundException;
 import java.util.*;
 
 @Slf4j

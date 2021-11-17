@@ -1,6 +1,6 @@
 package com.ibcs.tnl.repo;
 
-import com.ibcs.tnl.entity.LeaveType;
+import com.ibcs.tnl.model.LeaveType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

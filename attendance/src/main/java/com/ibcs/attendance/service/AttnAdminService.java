@@ -1,7 +1,7 @@
 package com.ibcs.attendance.service;
 
-import com.ibcs.attendance.ResponseDTO;
-import com.ibcs.attendance.dto.AttnAdminDto;
+import com.ibcs.attendance.dto.response.ResponseDTO;
+import com.ibcs.attendance.dto.request.AttnAdminDto;
 import com.ibcs.attendance.model.AttnAdmin;
 import com.ibcs.attendance.repo.AttnAdminRepo;
 import lombok.extern.slf4j.Slf4j;
@@ -10,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -83,12 +81,14 @@ public class AttnAdminService {
         try {
             AttnAdminDto attnAdminDto = new AttnAdminDto();
             AttnAdmin attnAdmin = attnAdminRepo.getById(id);
-            if (attnAdmin == null) {
+            if (!attnAdminRepo.existsById(id)) {
                 return new AttnAdminDto( null, null, null, null, null, null, null);
             } else {
 
                 BeanUtils.copyProperties(attnAdmin, attnAdminDto);
 //                attnAdminDto.setUserMessage("Successfully get user information.");
+                attnAdminDto.setEmpId(attnAdmin.getEmpId());
+                attnAdminDto.setUserId(attnAdminDto.getUserId());
 
                 return attnAdminDto;
             }

@@ -1,9 +1,7 @@
 package com.ibcs.hr.api;
 
-import com.ibcs.hr.dto.DeptDto;
-import com.ibcs.hr.dto.EmpDto;
+import com.ibcs.hr.dto.request.DeptDto;
 import com.ibcs.hr.service.DeptService;
-import com.ibcs.hr.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/deptApi")
+@RequestMapping("/api/dept")
 
 public class DeptApi {
 

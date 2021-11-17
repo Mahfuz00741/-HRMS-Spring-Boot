@@ -12,6 +12,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class BaseDto implements Serializable {
 
-private Long id;
-	
+    private Long id;
+
 }

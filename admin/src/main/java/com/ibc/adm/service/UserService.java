@@ -1,8 +1,8 @@
 package com.ibc.adm.service;
 
 
-import com.ibc.adm.dto.UserDto;
-import com.ibc.adm.entity.User;
+import com.ibc.adm.dto.request.UserDto;
+import com.ibc.adm.model.User;
 import com.ibc.adm.repo.UserRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;

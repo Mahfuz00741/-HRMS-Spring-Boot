@@ -1,7 +1,7 @@
 package com.ibcs.report.api;
 
 
-import com.ibcs.report.dto.ReportDto;
+import com.ibcs.report.dto.request.ReportRequestDto;
 import com.ibcs.report.service.ReportService;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.JRException;
@@ -11,25 +11,22 @@ import org.springframework.web.bind.annotation.*;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/reportApi")
+@RequestMapping("/api/report")
 @Slf4j
 public class ReportApi {
 
     @Autowired
     private ReportService reportService;
 
-    //   http://localhost:9094/report/reportApi/reportDept?deptId=1&type=pdf
-    @PostMapping("/report")
-    public ResponseEntity exportReport( @RequestBody ReportDto reportDto) throws FileNotFoundException,
+
+    @PostMapping("/")
+    public ResponseEntity exportReport( @RequestBody ReportRequestDto ReportRequestDto) throws FileNotFoundException,
             JRException, SQLException {
-        System.out.println("reportDto"+ reportDto);
+        System.out.println("reportDto"+ ReportRequestDto);
 
-        return reportService.exportReport(reportDto);
+        return reportService.exportReport(ReportRequestDto);
     }
-
-
-
 
 }

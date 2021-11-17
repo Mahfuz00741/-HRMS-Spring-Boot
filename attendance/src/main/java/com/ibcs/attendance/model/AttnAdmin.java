@@ -10,8 +10,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Date;
 
 
 @Entity
@@ -22,10 +20,9 @@ import java.util.Date;
 
 public class AttnAdmin extends BaseEntity{
 
-    @Temporal(TemporalType.DATE)
+
     @Column(name = "APP_DATE", nullable=false)
-//    private LocalDate appDate;
-    private Date appDate;
+    private LocalDate appDate;
 
     @Column(name = "ADM_USER_ID", nullable = false)
     private Long userId;
@@ -33,29 +30,19 @@ public class AttnAdmin extends BaseEntity{
     @Column(name = "HR_EMP_ID", nullable = false)
     private Long empId;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "ON_MOMENT", nullable=false)
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-//    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "YYYY-MM-dd HH:mm:ss.Z")
-//    private LocalDateTime OnMoment;
-    private Date OnMoment;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+    private LocalDateTime OnMoment;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "_IN", nullable=false)
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-//    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "YYYY-MM-dd HH:mm:ss.Z")
-//    private LocalDateTime in;
-    private Date in;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+    private LocalDateTime in;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "_OUT", nullable=false)
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-//    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "YYYY-MM-dd HH:mm:ss.Z")
-//    private LocalDateTime out;
-    private Date out;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+    private LocalDateTime out;
 
     @Column(length=254)
-    private String remark;
-
+    private String remarks;
 
 }

@@ -2,7 +2,7 @@ package com.ibcs.report.service;
 
 
 
-import com.ibcs.report.dto.ReportDto;
+import com.ibcs.report.dto.request.ReportRequestDto;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +26,14 @@ public class ReportService {
     @Autowired
     private DataSource dataSource;
 
-    public ResponseEntity exportReport(ReportDto reportDto) throws FileNotFoundException, JRException, SQLException {
+    public ResponseEntity exportReport(ReportRequestDto ReportRequestDto) throws FileNotFoundException, JRException, SQLException {
 
-        File file = ResourceUtils.getFile("D:\\Projects\\JavaProject\\IBCS-TNL\\report\\ReportFile\\" + reportDto.getName());
+//        File file = ResourceUtils.getFile("D:\\Projects\\JavaProject\\IBCS-TNL\\report\\report\\" + ReportRequestDto.getName());
+        File file = ResourceUtils.getFile( "classpath:\\report\\"+ ReportRequestDto.getName());
         System.out.println("FILE NAME:::"+file);
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
 
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, reportDto.getParams(), dataSource.getConnection());
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, ReportRequestDto.getParams(), dataSource.getConnection());
 
         String fileName = System.currentTimeMillis() + ".pdf";
 

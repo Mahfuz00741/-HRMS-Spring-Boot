@@ -1,9 +1,7 @@
 package com.ibcs.tnl.service;
 
-import com.ibcs.tnl.dto.LeaveAppDto;
-import com.ibcs.tnl.dto.LeaveTypeDto;
-import com.ibcs.tnl.entity.LeaveApp;
-import com.ibcs.tnl.entity.LeaveType;
+import com.ibcs.tnl.dto.request.LeaveTypeDto;
+import com.ibcs.tnl.model.LeaveType;
 import com.ibcs.tnl.repo.LeaveTypeRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;

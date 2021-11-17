@@ -1,6 +1,8 @@
 package com.ibcs.hr.api;
 
-import com.ibcs.hr.dto.*;
+import com.ibcs.hr.dto.request.EmpDto;
+import com.ibcs.hr.dto.request.UserDto;
+import com.ibcs.hr.dto.response.ResponsFeignClientDto;
 import com.ibcs.hr.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/empApi")
+@RequestMapping("api/emp")
 @Slf4j
 public class EmpApi {
     @Autowired

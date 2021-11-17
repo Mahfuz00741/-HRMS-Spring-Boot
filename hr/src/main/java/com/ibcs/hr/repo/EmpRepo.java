@@ -1,6 +1,6 @@
 package com.ibcs.hr.repo;
 
-import com.ibcs.hr.entity.Emp;
+import com.ibcs.hr.model.Emp;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

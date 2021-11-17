@@ -1,37 +1,20 @@
 package com.ibcs.tnl.service;
 
-import com.ibcs.tnl.dto.DesgDto;
-import com.ibcs.tnl.dto.EmpDto;
-import com.ibcs.tnl.dto.LeaveAppDto;
-import com.ibcs.tnl.dto.ResponsFeignClientDto;
-import com.ibcs.tnl.entity.LeaveApp;
+import com.ibcs.tnl.dto.request.EmpDto;
+import com.ibcs.tnl.dto.request.LeaveAppDto;
+import com.ibcs.tnl.dto.response.ResponsFeignClientDto;
+import com.ibcs.tnl.model.LeaveApp;
 import com.ibcs.tnl.repo.LeaveAppRepo;
 import com.ibcs.tnl.repo.LeaveTypeRepo;
-import com.ibcs.tnl.Client.Consumer;
+import com.ibcs.tnl.client.Consumer;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.jasperreports.engine.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
-import javax.sql.DataSource;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.*;
 
 @Service

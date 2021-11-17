@@ -1,0 +1,43 @@
+
+L
+java:S3740"/Provide the parametrized type for this generic.(£Á‡ß8Ø¿£áÒ/
+Q
+java:S37408"/Provide the parametrized type for this generic.(ŒÛÓüÿÿÿÿ8Ø¿£áÒ/
+Q
+java:S3740H"/Provide the parametrized type for this generic.(ÎÀ¤Üûÿÿÿÿ8Ù¿£áÒ/
+Q
+java:S3740J"/Provide the parametrized type for this generic.(œ‚ Ëÿÿÿÿÿ8Ù¿£áÒ/
+Q
+java:S3740M"/Provide the parametrized type for this generic.(¸à†‚şÿÿÿÿ8Ú¿£áÒ/
+L
+java:S3740P"/Provide the parametrized type for this generic.(…„„ˆ8Ú¿£áÒ/
+L
+java:S3740U"/Provide the parametrized type for this generic.(ˆ…Éã8Ú¿£áÒ/
+L
+java:S3740Y"/Provide the parametrized type for this generic.(–šãÊ8Û¿£áÒ/
+L
+java:S3740`"/Provide the parametrized type for this generic.(ŸŒ¨Š8Ü¿£áÒ/
+L
+java:S3740b"/Provide the parametrized type for this generic.(µñŒŒ8Ü¿£áÒ/
+Q
+java:S3740e"/Provide the parametrized type for this generic.(«Ä•‰ûÿÿÿÿ8İ¿£áÒ/
+L
+java:S3740k"/Provide the parametrized type for this generic.(¶Ÿ˜Í8İ¿£áÒ/
+L
+java:S3740v"/Provide the parametrized type for this generic.(¯Ö¿…8İ¿£áÒ/
+L
+java:S3740x"/Provide the parametrized type for this generic.(şÄÅÊ8Ş¿£áÒ/
+Q
+java:S3740{"/Provide the parametrized type for this generic.(çƒ½Œúÿÿÿÿ8Ş¿£áÒ/
+Z	java:S1062"9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ8ø¿£áÒ/
+]	java:S125B"<This block of commented-out lines of code should be removed.(Ûøêëıÿÿÿÿ8ƒÀ£áÒ/
+X	java:S125W"<This block of commented-out lines of code should be removed.(äø”ë8À£áÒ/
+X	java:S125]"<This block of commented-out lines of code should be removed.(ıÿ º8‘À£áÒ/
+X	java:S125o"<This block of commented-out lines of code should be removed.(ƒ«§¾8›À£áÒ/
+X	java:S125u"<This block of commented-out lines of code should be removed.(×ÂÔÆ8ŸÀ£áÒ/
+h
+java:S2259("FA "NullPointerException" could be thrown; "fileName" is nullable here.(¦Ñúºùÿÿÿÿ8™Á£áÒ/
+Y
+java:S2589q"7Remove this expression which always evaluates to "true"(»¸ åûÿÿÿÿ8šÁ£áÒ/
+e
+java:S2583G"CChange this condition so that it does not always evaluate to "true"( ¦†¬úÿÿÿÿ8›Á£áÒ/

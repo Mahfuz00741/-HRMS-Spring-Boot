@@ -1,18 +1,17 @@
 package com.ibc.adm.api;
 
-import com.ibc.adm.dto.ChangePasswordDto;
-import com.ibc.adm.dto.LoginDto;
-import com.ibc.adm.dto.RegistationDto;
-import com.ibc.adm.dto.ResponseDto;
+import com.ibc.adm.dto.request.ChangePasswordDto;
+import com.ibc.adm.dto.request.LoginDto;
+import com.ibc.adm.dto.request.RegistationDto;
+import com.ibc.adm.dto.reponse.ResponseDto;
 import com.ibc.adm.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 
 public class AuthApi {
     @Autowired

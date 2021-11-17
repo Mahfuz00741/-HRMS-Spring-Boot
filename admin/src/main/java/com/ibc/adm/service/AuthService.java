@@ -1,8 +1,11 @@
 package com.ibc.adm.service;
 
-import com.ibc.adm.dto.*;
-import com.ibc.adm.entity.Role;
-import com.ibc.adm.entity.User;
+import com.ibc.adm.dto.reponse.ResponseDto;
+import com.ibc.adm.dto.request.ChangePasswordDto;
+import com.ibc.adm.dto.request.LoginDto;
+import com.ibc.adm.dto.request.RegistationDto;
+import com.ibc.adm.model.Role;
+import com.ibc.adm.model.User;
 import com.ibc.adm.repo.UserRepo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

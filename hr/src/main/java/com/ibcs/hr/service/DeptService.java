@@ -1,9 +1,7 @@
 package com.ibcs.hr.service;
 
-import com.ibcs.hr.dto.DeptDto;
-import com.ibcs.hr.dto.EmpDto;
-import com.ibcs.hr.entity.Dept;
-import com.ibcs.hr.entity.Emp;
+import com.ibcs.hr.dto.request.DeptDto;
+import com.ibcs.hr.model.Dept;
 import com.ibcs.hr.repo.DeptRepo;
 import com.ibcs.hr.repo.EmpRepo;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +27,7 @@ public class DeptService {
     private DeptDto conv(Dept dept) {
         DeptDto deptDto = new DeptDto();
         BeanUtils.copyProperties(dept, deptDto, "headOfId");
-        deptDto.setHeadOfId(dept.getHeadOfId().getId());
+        deptDto.setHeadOfId(dept.getHod().getId());
         return deptDto;
     }
 
@@ -38,7 +36,7 @@ public class DeptService {
         Dept dept = deptRepo.getById(id);
         BeanUtils.copyProperties(deptDto, dept, "id", "headOfId");
 
-        dept.setHeadOfId(empRepo.getById(deptDto.getHeadOfId()));
+        dept.setHod(empRepo.getById(deptDto.getHeadOfId()));
 
         return conv(deptRepo.save(dept));
     }
@@ -47,7 +45,7 @@ public class DeptService {
 
         Dept dept = new Dept();
         BeanUtils.copyProperties(deptDto, dept, "headOfId");
-        dept.setHeadOfId(empRepo.getById(deptDto.getHeadOfId()));
+        dept.setHod(empRepo.getById(deptDto.getHeadOfId()));
         return conv(deptRepo.save(dept));
     }
 

@@ -1,6 +1,6 @@
 package com.ibc.adm.repo;
 
-import com.ibc.adm.entity.User;
+import com.ibc.adm.model.User;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

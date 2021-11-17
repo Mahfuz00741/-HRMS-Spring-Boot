@@ -16,7 +16,7 @@ spring:
           predicates:
             - Path=/hr/**
         - id: LEAVE-SERVICE
-          uri: http://localhost:8080/
+          uri: lb://LEAVE-SERVICE
           predicates:
             - Path=/leave/**
 

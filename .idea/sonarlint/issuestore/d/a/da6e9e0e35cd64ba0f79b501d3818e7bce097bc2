@@ -1,0 +1,22 @@
+
+J
+java:S3740N"/Provide the parametrized type for this generic.(é»™Äøÿÿÿÿ
+J
+java:S3740S"/Provide the parametrized type for this generic.(úÈ—ıÿÿÿÿ
+V	java:S125L"<This block of commented-out lines of code should be removed.(—ôÜùÿÿÿÿ
+S	java:S106c"9Replace this use of System.out or System.err by a logger.(×ÁŞùÿÿÿÿ
+S	java:S106e"9Replace this use of System.out or System.err by a logger.(ã–§™øÿÿÿÿ
+]
+java:S1192)"GDefine a constant instead of duplicating this literal "gender" 3 times.(ˆ„ìš
+e
+java:S1192_"ODefine a constant instead of duplicating this literal "User not found" 3 times.(É¬§ß
+]
+java:S1192)"GDefine a constant instead of duplicating this literal "deptId" 3 times.(ˆ„ìš
+]
+java:S1192)"GDefine a constant instead of duplicating this literal "desgId" 3 times.(ˆ„ìš
+c
+java:S1192)"MDefine a constant instead of duplicating this literal "supervisorId" 3 times.(ˆ„ìš
+z
+java:S1488S"_Immediately return this expression instead of assigning it to the temporary variable "empDtos".(úÈ—ıÿÿÿÿ
+_
+java:S2583^"DChange this condition so that it does not always evaluate to "false"(ïŸ¢İşÿÿÿÿ
