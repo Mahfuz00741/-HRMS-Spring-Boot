@@ -2,18 +2,10 @@ package com.ibcs.tnl.api;
 
 import com.ibcs.tnl.dto.LeaveAppDto;
 import com.ibcs.tnl.service.LeaveAppService;
-import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.sql.DataSource;
-import javax.ws.rs.QueryParam;
-import java.io.FileNotFoundException;
-import java.sql.SQLException;
-import java.util.Date;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
