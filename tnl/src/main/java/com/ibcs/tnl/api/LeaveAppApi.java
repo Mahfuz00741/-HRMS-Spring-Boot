@@ -50,16 +50,4 @@ public class LeaveAppApi {
         leaveAppService.deleteById(id);
     }
 
-    ////// Report Part Api //////
-//    P_FROM_DATE  P_TO_DATE  P_EMP_HR_DEPT_ID
-//    http://localhost:9093/leave/leaveAppApi/reportLeaveStutas?deptId=1&fromDate=2021-10-13&toDate=2021-10-15&type=pdf
-    //   http://localhost:9090/hr/empApi/reportDept?deptId=1&type=pdf
-    @GetMapping("/reportLeaveStutas")
-    public ResponseEntity generateReportDept( @QueryParam("type") String type,
-                                              @QueryParam("deptId") Integer deptId,
-                                              @QueryParam("fromDate") Date fromDate,
-                                              @QueryParam("toDate") Date toDate)
-            throws FileNotFoundException, JRException, SQLException {
-        return leaveAppService.exportReportWithLeaveStutas(type, deptId, fromDate, toDate);
-    }
 }
